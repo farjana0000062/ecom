@@ -1,0 +1,212 @@
+/* ==========================
+   Global Navbar Styling
+   ========================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, #ff6b6b, #ff4141);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* ==========================
+   Logo
+   ========================== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo img {
+  width: 55px;
+  height: auto;
+  border-radius: 50%;
+}
+.nav-logo p {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.nav-logo p a {
+  color: white !important;
+  text-decoration: none !important;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-logo p a.shopper-link:hover {
+  color: #ff4141; /* optional: red hover effect */
+  transition: 0.3s;
+}
+
+/* ==========================
+   Menu
+   ========================== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 45px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.nav-menu li {
+  position: relative;
+  cursor: pointer;
+}
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.nav-menu a:hover {
+  color: #171717;
+}
+.nav-menu hr {
+  border: none;
+  width: 70%;
+  height: 3px;
+  border-radius: 5px;
+  background: #fff;
+  margin-top: 5px;
+}
+
+/* ==========================
+   Login + Cart
+   ========================== */
+.nav-login-cart {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.nav-login-cart button {
+  width: 130px;
+  height: 45px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  color: #ff4141;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.nav-login-cart button:hover {
+  background: #171717;
+  color: #fff;
+}
+.nav-login-cart img {
+  width: 35px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.nav-login-cart img:hover {
+  transform: scale(1.1);
+}
+.nav-cart-count {
+  width: 22px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #171717;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 13px;
+  position: relative;
+  margin-left: -38px;
+  margin-top: -10px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+/* ==========================
+   Dropdown (Mobile)
+   ========================== */
+.nav-dropdown {
+  display: none;
+  width: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);
+}
+.nav-dropdown.open {
+  transform: rotate(90deg);
+}
+
+/* ==========================
+   Responsive
+   ========================== */
+@media (max-width: 1280px) {
+  .navbar {
+    padding: 12px 40px;
+  }
+  .nav-logo p {
+    font-size: 24px;
+  }
+  .nav-menu {
+    gap: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    padding: 12px 30px;
+  }
+  .nav-dropdown {
+    display: block;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  .nav-menu li a {
+    color: #333;
+  }
+  .nav-menu-visible {
+    display: flex;
+  }
+  .nav-login-cart {
+    gap: 20px;
+  }
+  .nav-login-cart button {
+    width: 100px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+  .nav-logo img {
+    width: 40px;
+  }
+  .nav-logo p {
+    font-size: 20px;
+  }
+  .nav-login-cart img {
+    width: 28px;
+  }
+  .nav-login-cart button {
+    font-size: 14px;
+  }
+}
