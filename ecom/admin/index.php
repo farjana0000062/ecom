@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include '../db.php';
 
 $message = "";
 
@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
         $_SESSION['user_email'] = $username;
         $_SESSION['username'] = $username;
         $_SESSION['role'] = $role; 
-        header("Location: index.php");
+        header("Location: post.php");
         exit();
     } else {
         $message = "<p class='error-msg'>Invalid username or password!</p>";
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="../auth.css">
 </head>
 <body>
 <div class="auth-container">
@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
       <button type="submit" name="login">Login</button>
   </form>
 
-  <p>Don't have an account? <a href="signup.php">Sign up here</a></p>
+  <!-- <p>Don't have an account? <a href="signup.php">Sign up here</a></p> -->
 </div>
 </body>
 </html>
