@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2025 at 11:17 PM
+-- Generation Time: Oct 30, 2025 at 03:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -57,20 +57,22 @@ INSERT INTO `products` (`id`, `name`, `description`, `category`, `tags`, `image`
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
   `username` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `role` enum('user','admin') NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`) VALUES
-(5, '', 'farjanafarjo10@gmail.com', '$2y$10$N9iE4Lu6WjjHQtmnIr47vORoceG26p.Gr5j0y7WVenmBUm32TQyR2', '2025-10-22 20:38:53'),
-(9, 'farjana10', 'farjana2223@gamil.com', '$2y$10$5M9BN8vxRPTfxAMP9WDHTuje4seQ8Bo3G0ffKNaNTWBQEihJkBfGK', '2025-10-22 20:48:32'),
-(10, 'farjo10', 'anjuman676262@gmail.com', '$2y$10$u93IL2Y3EbDXPTFSEXmmh.Lb1O/QjNdu3grsFgChm2/cnw82DgmSG', '2025-10-22 20:59:56');
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `username`, `email`, `password`, `created_at`, `role`) VALUES
+(1, 'Farjana', 'Akter', 'farjana10', 'farjanafarjo10@gmail.com', '$2y$10$x1uIl92mi4OKsZBQTtj.C.a0Tqd2cQo952oVbJELkbhnwSMn8qccu', '2025-10-29 16:09:20', 'admin'),
+(2, 'a', 'b', 'ab', 'ab@gmail.com', '$2y$10$mzDeGrR.gIVSHyAiChS8quWYmg2pTawDOs7Y9ndYEPIKoMJ7.oH.6', '2025-10-29 16:56:54', 'user');
 
 --
 -- Indexes for dumped tables
@@ -104,7 +106,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

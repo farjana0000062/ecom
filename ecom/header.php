@@ -36,7 +36,7 @@ session_start();
 
           <!-- Admin Panel button -->
           <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin'): ?>
-            <a href="admin/index.php"><button class="nav-btn admin-btn">Admin Panel</button></a>
+            <a href="admin.php"><button class="nav-btn admin-btn">Admin Panel</button></a>
           <?php endif; ?>
 
           <a href="logout.php"><button class="nav-btn">Logout</button></a>
