@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'db.php';
+include 'config/db.php';
 
 $message = "";
 
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
 <head>
   <meta charset="UTF-8">
   <title>Login</title>
-  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="style/auth.css">
 </head>
 <body>
 <div class="auth-container">
